@@ -34,6 +34,9 @@ timeouts 1 5 30 200 180 2500 15 60
 setgid 65535
 setuid 65535
 flush
+log 
+logformat "L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
+monitor /ect/3proxy/conf/3proxy.cfg
 auth none
 $(awk -F "/" '{
 print "proxy -6 -n -a -p" $2 " -i" $1 " -e"$3"\n" \
